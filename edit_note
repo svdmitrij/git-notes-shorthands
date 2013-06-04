@@ -1,0 +1,11 @@
+#!/bin/bash
+
+branch=$1
+
+if [ -z $branch ]
+then
+  echo "Enter branch: $0 branch"
+  exit 1
+fi
+
+git notes edit $branch

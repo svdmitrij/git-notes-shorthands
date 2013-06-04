@@ -1,0 +1,15 @@
+#!/bin/bash
+
+namespace=$1
+message=$2
+commit=$3
+help="Enter params: $0 namespace message commit"
+
+if [[ -z $namespace || -z $message || -z $commit ]]
+then
+	echo $help
+	exit 1
+fi
+
+
+git notes --ref=$namespace add -m "$message" $commit

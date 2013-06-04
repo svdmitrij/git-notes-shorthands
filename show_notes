@@ -1,0 +1,11 @@
+#!/bin/bash
+
+namespace=$1
+
+if [ -z $namespace ]
+then
+	echo "Enter params: $0 namespace"
+	exit 1
+fi
+
+git log --show-notes=$namespace
