@@ -1,11 +1,12 @@
 #!/bin/bash
 
-branch=$1
+namespace=$1
+commit=$2
 
-if [ -z $branch ]
+if [ -z $commit ]
 then
-  echo "Enter branch: $0 branch"
+  echo "Enter params: $0 namespace commitHash"
   exit 1
 fi
 
-git notes edit $branch
+git notes git --ref=$namespace edit $commit
